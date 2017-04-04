@@ -79,7 +79,6 @@ class Scrapper(object):
             logging.debug("[-]ThreadPool started...")
             result = tp.map(self.crawl, url_list)
 
-
             for el in result:
                 for offer, price in el:
                     items.append((offer, price))
