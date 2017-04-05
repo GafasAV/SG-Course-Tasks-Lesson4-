@@ -87,6 +87,14 @@ class Scrapper(object):
         return items
 
     def crawl(self, url):
+        """
+        Takes URL, load it, parse and return data-list that contain
+        data-pair(offer, price)
+        
+        if error -> return error code...
+        Must be -> (logging.basicConfig(level=logging.DEBUG))
+        
+        """
         resp = self.session.get(url)
 
         if resp.status_code == 200:
